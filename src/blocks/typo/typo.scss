@@ -56,7 +56,8 @@ h6 {
   font-family: $font-family--heading;
   font-weight: 700;
   line-height: $line-height--heading;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: $text-color;
 }
 
@@ -82,7 +83,7 @@ h6 {
 
 .h1,
 h1 {
-  font-size: 35px;
+  font-size: 32px;
 
   @media (min-width: $screen-xl) {
     font-size: 46px;
@@ -112,6 +113,12 @@ h4,
 .h5,
 h5 {
   font-size: 16px;
+  text-transform: none;
+
+  span {
+    font-family: $font-family;
+    font-weight: 400;
+  }
 
   @media (min-width: $screen-xl) {
     font-size: 18px;
@@ -234,7 +241,7 @@ ol{
   }
 }
 
-ul {
+/* ul {
 
   li:before {
     display: inline-block;
@@ -252,7 +259,7 @@ ul {
       height: 5px;
     }
   }
-}
+} */
 
 q {
   quotes:  "«" "»";
