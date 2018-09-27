@@ -1,9 +1,81 @@
-// В этом файле должны быть стили для БЭМ-блока how-protect, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .how-protect {
+  margin-bottom: 30px;
+  background: linear-gradient(to right, $bg-dark, $bg-dark 66%, $white 66%, $white);
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 50px;
+    background: linear-gradient(to right, $bg-dark, $bg-dark 38%, $white 38%, $white);
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 50px;
+    background: linear-gradient(to right, $bg-dark, $bg-dark 43%, $white 43%, $white);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__col {
+    @include col(xs, 12);
+  }
+
+  &__img-wrapper {
+    padding-top: 20px;
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 5);
+    @include col-offset(xl, 1);
+    @include col(xl, 5);
+    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      padding-top: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 50px;
+    }
+
+    img {
+      display: block;
+      width: 260px;
+      object-fit: cover;
+      object-position: center;
+
+      @media (min-width: $screen-md) {
+        width: 281px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 465px;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    @include col(xs, 12);
+    @include col(md, 5);
+    @include col-offset(xl, 1);
+    @include col(xl, 5);
+    padding-top: 30px;
+    background-color: $white;
+
+    &::before {
+      position: absolute;
+      left: -11px;
+      top: 0;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 100%;
+      background-color: $white;
+    }
+  }
+
+  &__para {
+
+    span {
+      display: block;
+    }
+  }
 }

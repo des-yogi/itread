@@ -83,15 +83,35 @@ h6 {
 
 .h1,
 h1 {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 40px;
   font-size: 32px;
 
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    content: "";
+    display: block;
+    width: 70px;
+    height: 1px;
+    background-color: currentColor;
+
+    @media (min-width: $screen-xl) {
+      bottom: -25px;
+    }
+  }
+
   @media (min-width: $screen-xl) {
+    margin-bottom: 50px;
     font-size: 46px;
   }
 }
 
 .h2,
 h2 {
+  margin-top: 0;
   font-size: 22px;
 
   @media (min-width: $screen-xl) {
@@ -142,6 +162,14 @@ figure {
   line-height: inherit;
   color: currentColor;
   hyphens: auto;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 address {
@@ -206,14 +234,15 @@ a {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-  color: $text-color;
+  color: $text-muted;
   text-decoration: none;
   transition: $transition-base;
 
   &:hover,
   &:active {
-    text-decoration: underline;
-    text-decoration-skip: ink;
+    // text-decoration: underline;
+    // text-decoration-skip: ink;
+    color: $accent-color;
   }
 }
 

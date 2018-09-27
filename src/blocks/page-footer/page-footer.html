@@ -1,11 +1,68 @@
-<!--DEV
-
-Нужно убрать пробел между @-ами:
-
-@ @include('blocks/page-footer/page-footer.html')
-
--->
-
 <footer class="page-footer" role="contentinfo">
-  page-footer
+  <div class="container">
+    <div class="row">
+      <nav class="page-footer__nav" role="navigation">
+        <ul class="page-footer__nav-list">
+          <li class="page-footer__nav-item  page-footer__nav-item--logo">
+            <a href="/" class="logo" title="ITread логотип">
+              <img src="img/itread-logo.svg" alt="ITread logo" width="183" height="26">
+            </a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="scroll-link  page-footer__nav-link" href="#page-header" data-scroll-link="">В начало</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="scroll-link  page-footer__nav-link" href="#features" data-scroll-link>Особенности</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="delivery.html">Доставка и оплата</a>
+          </li>
+          <li class="page-footer__nav-item">
+            <a class="page-footer__nav-link" href="">Инструкция</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="page-footer__address-col">
+        <section class="page-footer__address">
+          <h3 class="page-footer__title">Адрес</h3>
+          <p class="page-footer__para">04070, г. Киев, ул. Борисоглебская, 17/1</p>
+          <p class="page-footer__para">
+            <a class="page-footer_map-link" href="https://goo.gl/maps/kvRzVpLq8642" target="_blank" rel="nofollow">Показать на карте</a>
+          </p>
+        </section>
+      </div>
+      <div class="page-footer__worktime-col">
+        <section class="page-footer__worktime">
+          <h3 class="page-footer__title">Режим работы</h3>
+          <ul class="page-footer__worktime-list">
+            <li class="page-footer__worktime-item">ПН-ПТ:&emsp;10.00 — 19.00</li>
+            <li class="page-footer__worktime-item">СБ:&emsp;11.00 — 15.00</li>
+            <li class="page-footer__worktime-item">ВС:&emsp;Выходной</li>
+          </ul>
+        </section>
+      </div>
+      <div class="page-footer__contacts-col">
+        <section class="page-footer__contacts">
+          <h3 class="page-footer__title">Контакты</h3>
+          <a href="tel:+380445016001" title="Контактный телефон">+38 (044) 501-60-01</a>
+          <a href="mailto:info@fitnessdom.com.ua" title="Контактный email">info@fitnessdom.com.ua</a>
+        </section>
+      </div>
+    </div>
+  </div>
+  <article class="copyrights">
+    <div class="container">
+      <div class="copyrights__inner">
+        <a class="copyrights__link" href="http://fitnessdom.com.ua/" title="FD Fitnessdom — салон-магазин товаров для фитнеса" target="_blank" rel="nofollow">
+          <img src="img/fd-fitnessdom-logo.svg" alt="FD Fitnessdom логотип" width=109" height="26">
+        </a>
+        <a class="copyrights__link" href="http://it-doors.com/ru/" title="IT-Doors Outsourcing — разработчик комплексных решений для Интернет" target="_blank" rel="nofollow">
+          <img src="img/it-doors-logo.svg" alt="IT-Doors Outsourcing логотип" width="62" height="26">
+        </a>
+        <span class="copyrights__text">© Сopyright 2018. Fitness Dom.  ITREAD</span>
+      </div>
+    </div>
+  </article>
 </footer>

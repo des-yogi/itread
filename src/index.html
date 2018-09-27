@@ -22,12 +22,14 @@
         <article class="intro">
           <div class="container">
             <div class="row">
-              <div class="embed-responsive  embed-responsive--16-9">
-                <iframe src="https://www.youtube.com/embed/HNpLuXOg7xQ" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="intro__text">
-                <p class="intro__para">Дорожки для ходьбы (Walkmill) совсем недавно появились на рынке. Их производство продиктовано условиями жизни современного человека, которому приходится большую часть дня проводить в закрытом помещении.</p>
-                <p class="intro__para">Главное отличие от классических беговых дорожек — размер + вес, и, как следствие, мобильность. Дорожка толщиной с книгу (4,7 см) и весом шестилетнего ребёнка (25 кг) призвана решить одну из глобальных задач современности.</p>
+              <div class="intro__col">
+                <div class="embed-responsive  embed-responsive--16-9  intro__video">
+                  <iframe src="https://www.youtube.com/embed/HNpLuXOg7xQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="intro__text">
+                  <p class="intro__para">Дорожки для ходьбы (Walkmill) совсем недавно появились на рынке. Их производство продиктовано условиями жизни современного человека, которому приходится большую часть дня проводить в закрытом помещении.</p>
+                  <p class="intro__para">Главное отличие от классических беговых дорожек — размер + вес, и, как следствие, мобильность. Дорожка толщиной с книгу (4,7 см) и весом шестилетнего ребёнка (25 кг) призвана решить одну из глобальных задач современности.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -56,16 +58,20 @@
         <article class="how-protect">
           <div class="container">
             <div class="row">
-              <div class="how-protect__img-wrapper">
-                <picture>
-                  <source srcset="img/triple-pad-desktop@1x.png" media="(min-width: 1280px)">
-                  <source srcset="img/triple-pad-desktop@1x.png" media="(min-width: 768px">
-                  <img src="img/triple-pad-mobile@1x.png" alt="Дорожки для ходьбы Walkmill" width="281" height="318">
-                </picture>
-              </div>
-              <div class="how-protect__text">
-                <p class="how-protect__para"><span class="h1">В 3 раза реже</span> страдают сердечно-сосудистыми заболеваниями люди, которые регулярно бегают или занимаются зарядкой дома.</p>
-                <p class="how-protect__para">Прогулка из 10 000 шагов или пробежка не менее 20 минут каждый день. Это надежно защитит организм от гиподинамии.</p>
+              <div class="how-protect__col">
+                <div class="row">
+                  <div class="how-protect__img-wrapper">
+                    <picture>
+                      <source srcset="img/triple-pad-desktop@1x.png" media="(min-width: 1280px)">
+                      <source srcset="img/triple-pad-desktop@1x.png" media="(min-width: 768px">
+                      <img src="img/triple-pad-mobile@1x.png" alt="Дорожки для ходьбы Walkmill" width="281" height="318">
+                    </picture>
+                  </div>
+                  <div class="how-protect__text">
+                    <p class="how-protect__para"><span class="h1">В 3 раза реже</span> страдают сердечно-сосудистыми заболеваниями люди, которые регулярно бегают или занимаются зарядкой дома.</p>
+                    <p class="how-protect__para">Прогулка из 10 000 шагов или пробежка не менее 20 минут каждый день. Это надежно защитит организм от гиподинамии.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -101,7 +107,7 @@
                 </table>
               </div>
             </div>
-            <div class="row">
+            <div class="row  union__row-img">
               <div class="union__img-wrapper">
                 <picture>
                   <source srcset="img/union-desktop@1x.png" media="(min-width: 1280px)">
@@ -116,42 +122,66 @@
         <article class="award">
           <div class="container">
             <div class="row">
-              <h2 class="h1  award__title">Престижная награда за дизайн</h2>
-              <div class="union__img-wrapper">
-                <picture>
-                  <source srcset="img/red-dot-award-desktop@1x.jpg" media="(min-width: 1280px)">
-                  <source srcset="img/red-dot-award-tablet@1x.jpg" media="(min-width: 768px">
-                  <img src="img/red-dot-award-mobile@1x.jpg" alt="Награда за дизайн — RedDot Award 2018 Winner" width="105" height="75">
-                </picture>
+              <div class="award__col-title">
+                <h2 class="h1  award__title">Престижная награда <br>за дизайн</h2>
+              </div>
+              <div class="award__col-img">
+                <div class="award__img-wrapper">
+                  <picture>
+                    <source srcset="img/red-dot-award-desktop@1x.jpg" media="(min-width: 1280px)">
+                    <source srcset="img/red-dot-award-tablet@1x.jpg" media="(min-width: 768px">
+                    <img src="img/red-dot-award-mobile@1x.jpg" alt="Награда за дизайн — RedDot Award 2018 Winner" width="105" height="75">
+                  </picture>
+                </div>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="features">
+        <article id="features" class="features">
 
           <section class="features__slider-wrapper">
-            <div class="container  swiper-container  features__slider">
+            <div class="container  features__slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="row">
-                    <div class="features__slide-img">
+                  <div class="features__row-slide">
+                    <div class="features__slide-img-wrapper">
                       <picture>
                         <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 1280px)">
                         <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 768px">
-                        <img src="img/slider-1_01-mobile@1x.jpg" alt="Минимализм" width="437" height="370">
+                        <img class="features__slide-img  features__slide-img--right" src="img/slider-1_01-mobile@1x.jpg" alt="Минимализм" width="437" height="370">
                       </picture>
                     </div>
                     <div class="features__slide-text">
                       <span class="features__slide-note">Технологические особенности</span>
                       <h3 class="h1  features__slide-title ">Минимализм</h3>
-                      <p>5 Инженеров потратили более 1000 дней на разработку дорожки будущего!</p>
-                      <p>Результат:
-                        <ul>
-                          <li>9 патентов на изобретение</li>
-                          <li>2 патента на дизайн</li>
-                        </ul>
-                      </p>
+                      <p><span>5</span> Инженеров потратили более 1000 дней на разработку дорожки будущего!</p>
+                      <p class="features__list-name">Результат:</p>
+                      <ul>
+                        <li><span>9</span> патентов на изобретение</li>
+                        <li><span>2</span> патента на дизайн</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="features__row-slide">
+                    <div class="features__slide-img-wrapper">
+                      <picture>
+                        <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 1280px)">
+                        <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 768px">
+                        <img class="features__slide-img  features__slide-img--right" src="img/slider-1_01-mobile@1x.jpg" alt="Минимализм" width="437" height="370">
+                      </picture>
+                    </div>
+                    <div class="features__slide-text">
+                      <span class="features__slide-note">Технологические особенности</span>
+                      <h3 class="h1  features__slide-title ">Минимализм</h3>
+                      <p><span>5</span> Инженеров потратили более 1000 дней на разработку дорожки будущего!</p>
+                      <p class="features__list-name">Результат:</p>
+                      <ul>
+                        <li><span>9</span> патентов на изобретение</li>
+                        <li><span>2</span> патента на дизайн</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -168,51 +198,26 @@
                     <h3 class="features__thinnest-track-title">Самая тонкая дорожка в мире</h3>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="features__thinnest-track-scheme">
-                    <img src="img/dimensions.svg" alt="Толщина дорожки всего 4,7cm" width="110" height="26">
-                    <span>Визуализация толщины дорожки</span>
-                  </div>
-                  <div class="features__thinnest-track-hand-wrapper">
-                    <picture>
-                      <source srcset="img/hand-desktop@1x.jpg" media="(min-width: 1280px)">
-                      <source srcset="img/hand-desktop@1x.jpg" media="(min-width: 768px">
-                      <img src="img/hand-mobile@1x.jpg" alt="Толщина дорожки - визуализация" width="748" height="134">
-                    </picture>
-                  </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="features__thinnest-track-scheme">
+                  <img src="img/dimensions.svg" alt="Толщина дорожки всего 4,7cm" width="110" height="26">
+                  <span></span>
+                </div>
+                <div class="features__thinnest-track-hand-wrapper">
+                  <picture>
+                    <source srcset="img/hand-desktop@1x.jpg" media="(min-width: 1280px)">
+                    <source srcset="img/hand-desktop@1x.jpg" media="(min-width: 768px">
+                    <img src="img/hand-mobile@1x.jpg" alt="Толщина дорожки - визуализация" width="748" height="134">
+                  </picture>
+                </div>
+                <div class="features__thinnest-track-col-text">
                   <p class="features__thinnest-track-para">Выдерживает максимальный вес пользователя до 100 кг</p>
                 </div>
               </div>
-            </div>
-          </section>
-
-          <section class="features__slider-wrapper">
-            <div class="container  swiper-container  features__slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="row">
-                    <div class="features__slide-img">
-                      <picture>
-                        <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 1280px)">
-                        <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 768px">
-                        <img src="img/slider-1_01-mobile@1x.jpg" alt="Минимализм" width="437" height="370">
-                      </picture>
-                    </div>
-                    <div class="features__slide-text">
-                      <span class="features__slide-note">Технологические особенности</span>
-                      <h3 class="h1  features__slide-title ">Минимализм</h3>
-                      <p>5 Инженеров потратили более 1000 дней на разработку дорожки будущего!</p>
-                      <p>Результат:
-                        <ul>
-                          <li>9 патентов на изобретение</li>
-                          <li>2 патента на дизайн</li>
-                        </ul>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
             </div>
           </section>
 
@@ -331,7 +336,7 @@
                     </picture>
                   </div>
                   <div class="shop__silver-ctrl">
-                    <button id="silver-item" class="btn" type="button" value="silver">Выбрать</button>
+                    <button id="silver-item" class="btn  shop__order-btn" type="button" value="silver">Выбрать</button>
                   </div>
                 </div>
                 <div class="shop__img-col">
@@ -344,7 +349,7 @@
                     </picture>
                   </div>
                   <div class="shop__pink-ctrl">
-                    <button id="pink-item" class="btn" type="button" value="pink">Выбрать</button>
+                    <button id="pink-item" class="btn  shop__order-btn" type="button" value="pink">Выбрать</button>
                   </div>
                 </div>
               </div>
@@ -400,8 +405,6 @@
                           </select>
                         </label>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="shop__form-col-1">
                         <h4>Комплектация:</h4>
                         <ul class="shop__order-set">
@@ -414,12 +417,42 @@
                       <div class="shop__form-col-2">
                         <h4>Polar iTread <span>Silver</span></h4>
                         <div class="shop__order-img-wrapper">
-                          <!-- <img src="img/" alt="" width="" height=""> -->
+                          <img src="img/polar-itread-silver-order.jpg" alt="Polar ITread" width="285" height="124">
                         </div>
                         <div class="shop__order-check-wrapper">
-                          <div class="shop__order-price"></div>
-                          <div class="shop__order-quantity"></div>
+                          <div class="shop__order-price-block">
+                            <span class="shop__order-price-label">Цена:</span>
+                            <span class="shop__order-price">
+                              <span class="shop__order-price-num">25000</span> грн.
+                              </span>
+                          </div>
+                          <div class="shop__order-quantity-wrapper">
+                            <span class="shop__order-price-label">Кол-во:</span>
+                            <div class="shop__order-ctrl-wrapper">
+                              <button class="btn  shop__order-ctrl-btn" type="button" name="minus" value="-">
+                                <svg width="7" height="14">
+                                  <use xlink:href="img/sprite-svg.svg#arrow-right-icon"></use>
+                                </svg>
+                              </button>
+                              <input class="shop__order-ctrl-quantity" type="text" name="order-quantity" value="1">
+                              <button class="btn  shop__order-ctrl-btn" type="button" name="plus" value="+">
+                                <svg width="7" height="14">
+                                  <use xlink:href="img/sprite-svg.svg#arrow-right-icon"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="shop__form-col-1">
+                        <button id="prev-btn" class="btn  shop__order-btn" type="button">Назад</a>
+                      </div>
+                      <div class="shop__form-col-2">
+                        <input id="agreement" type="checkbox" name="agreement" checked>
+                        <label for="agreement">Даю согласие на обработку персональных данных, согласно ЗУ № 2297-VI от 01.08.2010</label>
+                         <button id="send-btn" class="btn  shop__order-btn" type="button">Отправить</button>
                       </div>
                     </div>
                   </form>

@@ -1,9 +1,79 @@
-// В этом файле должны быть стили для БЭМ-блока union, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .union {
+  margin-bottom: 50px;
+  background: linear-gradient(to top, $bg-dark, $bg-dark 50px, $white 50px, $white);
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 100px;
+    background: linear-gradient(to top, $bg-dark, $bg-dark 100px, $white 100px, $white);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__text {
+    @include col(xs, 12);
+    @include col-offset(md, 6);
+    @include col(md, 6);
+    @include col-offset(xl, 7);
+    @include col(xl, 5);
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  &__table {
+    width: 100%;
+    max-width: 425px;
+
+    td {
+      vertical-align: top;
+
+      &:first-child {
+        width: 55%;
+      }
+
+      &:last-child {
+        width: 45%;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+  }
+
+  &__row-img {
+    margin-top: -25px;
+
+    @media (min-width: $screen-md) {
+      margin-top: -105px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: -240px;
+    }
+  }
+
+  &__img-wrapper {
+    @include col(xs, 12);
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 180px;
+      object-fit: cover;
+      object-position: center;
+
+      @media (min-width: $screen-md) {
+        width: 415px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 688px;
+      }
+    }
+  }
 }
