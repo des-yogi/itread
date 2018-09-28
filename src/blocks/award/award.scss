@@ -1,9 +1,53 @@
-// В этом файле должны быть стили для БЭМ-блока award, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .award {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 100px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__col-title {
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 5);
+    @include col-offset(xl, 0);
+    @include col(xl, 7);
+  }
+
+  &__col-img {
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 5);
+    @include col-offset(xl, 0);
+    @include col(xl, 5);
+  }
+
+  &__title {
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__img-wrapper {
+    display: inline-block;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 105px;
+      height: 75px;
+
+      @media (min-width: $screen-md) {
+        width: 168px;
+        height: 120px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 301px;
+        height: 215px;
+      }
+    }
+  }
 }

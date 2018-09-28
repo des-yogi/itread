@@ -1,9 +1,50 @@
-// В этом файле должны быть стили для БЭМ-блока risk-factor, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .risk-factor {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background: linear-gradient(to bottom, transparent, transparent 120px, $bg-dark 120px, $bg-dark),
+              linear-gradient(to right, $white, $white 33%, $bg-dark 33%, $bg-dark);
+  border-top: 1px solid $white;
+
+  @media (min-width: $screen-md) {
+    padding-bottom: 100px;
+    background: linear-gradient(to bottom, transparent, transparent 200px, $bg-dark 200px, $bg-dark),
+                linear-gradient(to right, $white, $white 40%, $bg-dark 40%, $bg-dark);
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 100px;
+    background: linear-gradient(to bottom, transparent, transparent 300px, $bg-dark 300px, $bg-dark),
+                linear-gradient(to right, $white, $white 50%, $bg-dark 50%, $bg-dark);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__col {
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 10);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    color: $white;
+  }
 }

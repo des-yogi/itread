@@ -1,9 +1,169 @@
-// В этом файле должны быть стили для БЭМ-блока shop, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .shop {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  background-color: $bg-dark;
+  color: $white;
+
+  @media (min-width: $screen-md) {
+    padding-top: 90px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__show {
+
+  }
+
+  &__header-col {
+    @include col(xs, 12);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+  }
+
+  &__header-title,
+  &__item-title {
+    color: inherit;
+  }
+
+  &__item-title {
+    text-align: center;
+
+    span {
+      font-family: $font-family;
+      font-weight: 400;
+    }
+  }
+
+  &__img-col {
+    @include col(xs, 6);
+    @include col-offset(md, 2);
+    @include col(md, 3);
+  }
+
+  &__img-wrapper {
+    margin-bottom: 20px;
+  }
+
+  &__silver-ctrl {
+
+  }
+
+  &__order-btn {
+    width: 90%;
+  }
+
+  &__ctrl {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__color-col {
+    @include col(xs, 3);
+    @include col-offset(md, 2);
+    @include col(md, 2);
+
+    &:last-child {
+      @media (min-width: $screen-md) {
+        @include col-offset(md, 0);
+        transform: translateX(-10px);
+      }
+    }
+  }
+
+  &__color {
+    width: 100%;
+    height: 26px;
+    transform: skewX(-20deg);
+
+    &--silver {
+      background: linear-gradient(to top right, #7e7e7e 40%, #fbfaf8 90%);
+    }
+
+    &--pink {
+      background: linear-gradient(to top right, #dea2bc 40%, #fbfaf8 90%);
+    }
+
+  }
+
+  &__price-col {
+    @include col(xs, 6);
+    @include col(md, 4);
+  }
+
+  &__price-show {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__order {
+    display: none;
+  }
+
+  &__header {
+
+  }
+
+  &__form-col-main {
+
+  }
+
+  &__form {
+
+  }
+
+  &__form-col-1 {
+
+  }
+
+  &__form-col-2 {
+
+  }
+
+  &__order-set {
+
+  }
+
+  &__order-img-wrapper {
+
+  }
+
+  &__order-check-wrapper {
+
+  }
+
+  &__order-price-block {
+
+  }
+
+  &__order-price-label {
+
+  }
+
+  &__order-price {
+
+  }
+
+  &__order-price-num {
+
+  }
+
+  &__order-quantity-wrapper {
+
+  }
+
+  &__order-ctrl-wrapper {
+
+  }
+
+  &__order-ctrl-btn {
+
+  }
+
+  &__order-ctrl-quantity {
+
+  }
 }
