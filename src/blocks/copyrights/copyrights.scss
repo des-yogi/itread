@@ -1,9 +1,66 @@
-// В этом файле должны быть стили для БЭМ-блока copyrights, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .copyrights {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: $white;
+  background-color: $bg-dark;
 
   $block-name:                &; // #{$block-name}__element
 
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    display: inline-block;
+
+    &--itdoors {
+
+      img {
+        opacity: 0.25;
+        transition: $transition-base;
+
+        @media (min-width: $screen-md) {
+          width: 75px;
+          height: 32px;
+        }
+      }
+
+      &:hover,
+      &:active {
+        img {
+          opacity: 1;
+        }
+      }
+
+      @media (min-width: $screen-md) {
+        order: 1;
+      }
+    }
+
+    &--fdom {
+
+      img {
+        @media (min-width: $screen-md) {
+          width: 149px;
+          height: 36px;
+        }
+      }
+    }
+  }
+
+  &__text {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.65;
+    margin-top: 10px;
+
+    @media (min-width: $screen-md) {
+      width: auto;
+      margin-top: 0;
+    }
+  }
 }
