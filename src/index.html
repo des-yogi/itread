@@ -143,7 +143,8 @@
           <section class="features__slider-wrapper">
             <div class="container  features__slider">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+
+                <div class="swiper-slide  features__slide">
                   <div class="features__row-slide">
                     <div class="features__slide-img-wrapper">
                       <picture>
@@ -164,7 +165,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide  features__slide">
                   <div class="features__row-slide">
                     <div class="features__slide-img-wrapper">
                       <picture>
@@ -202,7 +203,7 @@
             </div>
 
             <div class="container">
-              <div class="row">
+              <div class="row  features__thinnest-track-row">
                 <div class="features__thinnest-track-scheme">
                   <img src="img/dimensions.svg" alt="Толщина дорожки всего 4,7cm" width="110" height="26">
                   <span></span>
@@ -215,9 +216,36 @@
                   </picture>
                 </div>
                 <div class="features__thinnest-track-col-text">
-                  <p class="features__thinnest-track-para">Выдерживает максимальный вес пользователя до 100 кг</p>
+                  <p class="h4  features__thinnest-track-para">Выдерживает максимальный вес пользователя до 100 кг</p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          <!-- Второй слайдер -->
+          <section class="features__slider-wrapper  features__slider-wrapper--second">
+            <div class="container  features__slider  features__slider--second">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide  features__slide">
+                  <div class="features__row-slide  features__row-slide--second">
+                    <div class="features__slide-img-wrapper">
+                      <picture>
+                        <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 1280px)">
+                        <source srcset="img/slider-1_01-desktop@1x.jpg" media="(min-width: 768px">
+                        <img class="features__slide-img  features__slide-img--right" src="img/slider-1_01-mobile@1x.jpg" alt="Минимализм" width="437" height="370">
+                      </picture>
+                    </div>
+                    <div class="features__slide-text">
+                      <span class="features__slide-note  features__slide-note--second">Технологические особенности</span>
+                      <h3 class="h1  features__slide-title ">Система амортизации</h3>
+                      <p>Система амортизации <span>"Shock Absorbing System"</span> — алюминиевые кронштейны специальной формы с антискользящим полиуретановым покрытием на 42,7% снижают уровень шума и поглащают ударную нагрузку.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="swiper-pagination  swiper-pagination--second"></div>
             </div>
           </section>
 
@@ -228,8 +256,8 @@
                   <div class="features__touch-control-text">
                     <h3 class="h2">Сенсорное управление</h3>
                     <p class="features__touch-control-para">Скорость дорожки регулируеться при помощи инфракрасных сенсоров.</p>
-                    <p class="features__touch-control-para">Дорожка для ходьбы iTREAD Walkmill это умное устройство с отсутствием каких-либо кнопок. Для активации достаточно легко коснуться полотна стопой. После того как вы сделаете первые три шага по дорожке (запатентованная технология "Step and Gо"), полотно медленно придет в движение. Скорость регулируется расположением идущего (запатентованная технология "Intelligent Speed Control" — регулировка скорости с помощью инфракрасных сенсоров).</p>
                   </div>
+                  <p class="features__touch-control-para  features__touch-control-para--big-padding">Дорожка для ходьбы iTREAD Walkmill это умное устройство с отсутствием каких-либо кнопок. Для активации достаточно легко коснуться полотна стопой. После того как вы сделаете первые три шага по дорожке (запатентованная технология "Step and Gо"), полотно медленно придет в движение. Скорость регулируется расположением идущего (запатентованная технология "Intelligent Speed Control" — регулировка скорости с помощью инфракрасных сенсоров).</p>
                 </div>
                 <div class="features__touch-control-col-2">
                   <div class="features__touch-control-img-wrapper">
@@ -248,9 +276,9 @@
                 <div class="features__touch-control-col-3">
                   <p class="features__touch-control-para">Зона ходьбы условно разделена на три части:</p>
                   <ul>
-                    <li>Верхняя зона — набор и поддержание максимальной скорости;</li>
-                    <li>Средняя зона — для поддержания средней скорости;</li>
-                    <li>Нижняя зона — для снижения скорости и остановки.</li>
+                    <li><strong>Верхняя зона</strong> — набор и поддержание максимальной скорости;</li>
+                    <li><strong>Средняя зона</strong> — для поддержания средней скорости;</li>
+                    <li><strong>Нижняя зона</strong> — для снижения скорости и остановки.</li>
                   </ul>
                   <p class="features__touch-control-para">Инфракрасные датчики определяют в какой зоне находятся ноги идущего человека и регулируют обороты двигателя.</p>
                 </div>
@@ -265,7 +293,7 @@
                   <img src="img/speedometer.svg" alt="Спидометр" width="146" height="146">
                 </div>
                 <div class="features__max-speed-text">
-                  <h3 class="h2">Максимальная скорость 6 <span>км/ч</span></h3>
+                  <h3 class="h2  features__max-speed-title">Максимальная скорость 6 <span>км/ч</span></h3>
                   <p class="features__max-speed-para">Скорость 6 км/час выбрана не случайно — это достаточно интенсивная ходьба, благодаря чему ваша кардио сессия будет высоко эффективной. Отсутствие боковых поручней избавит от соблазна удерживаться во время ходьбы, нарушая естественное положение тела, теряя навыки баланса, поддержание которого так важно в пожилом возрасте.</p>
                   <p class="features__max-speed-para">На начальных стадиях использования дорожки, до формирования устойчивого навыка ходьбы, расположите возле дорожки стул со спинкой, или установите тренажер рядом со стеной или столом. Удерживаясь одной рукой за опору, вы быстро сбалансируете туловище для поддержания максимальной скорости, а ваши ощущения приблизятся к естественной ходьбе по улице.</p>
                 </div>
@@ -321,13 +349,13 @@
             <section class="shop__show">
               <div class="row">
                 <div class="shop__header-col">
-                  <h2 class="h1">Покупка</h2>
-                  <h3 class="h2">Доставка по киеву бесплатно</h3>
+                  <h2 class="h1 shop__header-title">Покупка</h2>
+                  <h3 class="h2 shop__header-title">Доставка по киеву бесплатно</h3>
                 </div>
               </div>
               <div class="row">
                 <div class="shop__img-col">
-                  <h4 class="">Polar iTread <span>Silver</span></h4>
+                  <h4 class="shop__item-title">Polar iTread <span>Silver</span></h4>
                   <div class="shop__img-wrapper">
                     <picture>
                       <source srcset="img/polar-itread-silver-desktop@1x.jpg" media="(min-width: 1280px)">
@@ -335,12 +363,12 @@
                       <img src="img/polar-itread-silver-mobile@1x.jpg" alt="Polar ITread Silver" width="165" height="289">
                     </picture>
                   </div>
-                  <div class="shop__silver-ctrl">
-                    <button id="silver-item" class="btn  shop__order-btn" type="button" value="silver">Выбрать</button>
+                  <div class="shop__ctrl  shop__ctrl--silver">
+                    <button id="silver-item" class="btn  shop__order-btn" type="button" value="silver"></button>
                   </div>
                 </div>
                 <div class="shop__img-col">
-                  <h4 class="">Polar iTread <span>Rose Pink</span></h4>
+                  <h4 class="shop__item-title">Polar iTread <span>Rose Pink</span></h4>
                   <div class="shop__img-wrapper">
                     <picture>
                       <source srcset="img/polar-itread-pink-desktop@1x.jpg" media="(min-width: 1280px)">
@@ -348,20 +376,21 @@
                       <img src="img/polar-itread-pink-mobile@1x.jpg" alt="Polar ITread Silver" width="165" height="289">
                     </picture>
                   </div>
-                  <div class="shop__pink-ctrl">
-                    <button id="pink-item" class="btn  shop__order-btn" type="button" value="pink">Выбрать</button>
+                  <div class="shop__ctrl  shop__ctrl--pink">
+                    <button id="pink-item" class="btn  shop__order-btn" type="button" value="pink"></button>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="shop__color-col">
-                  <div class="shop__color shop__color--silver">Silver</div>
+                  <div class="shop__color shop__color--silver"></div>
                 </div>
                 <div class="shop__price-col">
-                  <div class="shop__price-show"><span id="item-price">26000</span> грн.</div>
+                  <div class="shop__price-show">
+                    <span id="item-price">26000</span> грн.</div>
                 </div>
                 <div class="shop__color-col">
-                  <div class="shop__color shop__color--pink">Pink</div>
+                  <div class="shop__color shop__color--pink"></div>
                 </div>
               </div>
             </section>
@@ -447,7 +476,7 @@
                     </div>
                     <div class="row">
                       <div class="shop__form-col-1">
-                        <button id="prev-btn" class="btn  shop__order-btn" type="button">Назад</a>
+                        <button id="prev-btn" class="btn  shop__order-btn" type="button">Назад</button>
                       </div>
                       <div class="shop__form-col-2">
                         <input id="agreement" type="checkbox" name="agreement" checked>
