@@ -44,3 +44,39 @@
     });
 
 }());
+
+$( document ).ready(function() {
+
+  $('#silver-item').click(function() {
+    $('.shop__show').hide();
+    $('.shop__order').show();
+  });
+
+  $('#pink-item').click(function() {
+    $('.shop__show').hide();
+    $('.shop__order').show();
+  });
+
+  $('#prev-btn').click(function() {
+    $('.shop__show').show();
+    $('.shop__order').hide();
+  });
+
+
+  /*$('#silver-item').click(function() {
+
+    $('.shop__show').animate({
+      transform: 'translateX(-150%)'
+    }, {
+      duration: 500
+    });
+
+    $('.shop__order').animate({
+      transform: 'translateX(-100%)'
+    }, {
+      duration: 500
+    });
+
+  });*/
+
+});

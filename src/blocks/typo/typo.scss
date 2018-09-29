@@ -252,7 +252,7 @@ blockquote {
   margin-right: 0;
 }
 
-ol{
+/* ol{
   counter-reset: myCounter;
 
   li:before {
@@ -268,7 +268,7 @@ ol{
     line-height: inherit;
     color: $text-color;
   }
-}
+} */
 
 /* ul {
 
@@ -292,4 +292,9 @@ ol{
 
 q {
   quotes:  "«" "»";
+}
+
+input[type=text],
+textarea {
+  color: $white;
 }

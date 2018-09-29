@@ -1,39 +1,69 @@
-$gray-lightest:               hsl(0, 0%, 90%);
-$border-color:                hsl(0, 0%, 60%) !default;
-
-$line-height:                 1.375em !default;
-
-$border-radius:               3px !default;
-
 .field-select {
 
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: ($line-height / 2);
+  margin-bottom: 20px;
 
-  &__name {
-    @include field-name;
+  &:last-of-type {
+    margin-bottom: 0;
   }
 
-  &__input-wrap {}
-
-  &__select {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
+  &__name {
+    display: block;
+    margin-bottom: 10px;
+    font-family: $font-family;
+    font-size: 1em;
+    font-weight: 400;
     line-height: $line-height;
-    padding: $field-padding-vertical $field-padding-horizontal;
-    font-size: inherit;
-    font-family: inherit;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    appearance: none;
-    background-color: #fff;
+  }
+
+/*   &__select-wrap {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    //z-index: 1;
+    display: block !important;
+    width: 36px !important;
+    height: 36px !important;
+    // background-color: green;
     background-image: svg-load('../blocks/field-select/img_to_bg/select-down.svg');
     background-repeat: no-repeat;
     background-position: right 0.3em center;
     background-size: 1.063em 0.688em;
+  }
+} */
+
+  &__select {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 385px;
+    height: 36px;
+    line-height: $line-height;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 45px;
+    font-size: inherit;
+    font-family: inherit;
+    border: 1px solid $white;
+    border-radius: 0;
+    appearance: none;
+    background-color: $bg-dark;
+    color: $white;
+    cursor: pointer;
+    transition: $transition-base;
+    // background-image: linear-gradient(to left, $white, $white 36px, $bg-dark 36px);
+    background-image: svg-load('../blocks/field-select/img_to_bg/select-down.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 36px;
 
     &[multiple] {
       background-image: none;
@@ -44,19 +74,41 @@ $border-radius:               3px !default;
       display: none;
     }
 
-    &:active,
+    &:hover {
+      background-image: svg-load('../blocks/field-select/img_to_bg/select-down-hover.svg');
+      border-color: $accent-color;
+    }
+
+
     &:focus {
-      @include field-focus;
+      background-image: svg-load('../blocks/field-select/img_to_bg/select-down-focus.svg');
+      // background-image: linear-gradient(to left, $accent-color, $accent-color 36px, $bg-dark 36px);
+      border-color: $accent-color;
+      outline: 0;
     }
 
     &[disabled],
     &[readonly] {
       cursor: default;
-      background-color: $gray-lightest;
+      background-color: initial;
+      background-image: svg-load('../blocks/field-select/img_to_bg/select-down-disabled.svg');
+      border-color: initial;
+      opacity: 0.5;
     }
   }
 
   &__help-text {
-    @include field-help-text;
+    $text-color--muted:   $accent-color !default;
+    $font-size--small:    0.75em !default;
+
+    display: block;
+    padding-top: 0.4em;
+    font-size: $font-size--small;
+    line-height: 1.2em;
+    color: $accent-color;
+
+    &:empty {
+      display: none;
+    }
   }
 }

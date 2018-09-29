@@ -1,28 +1,17 @@
-// В этом файле должны быть стили для БЭМ-блока field-text, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$gray-lighter:                hsl(0, 0%, 80%) !default;
-$border-color:                hsl(0, 0%, 60%) !default;
-
-$text-color--muted:           hsl(0, 0%, 50%) !default;
-
-$line-height:                 1.375em !default;
-
-$field-padding-vertical:      0.3em !default;
-$field-padding-horizontal:    0.7em !default;
-
-$border-radius:               3px !default;
-
 .field-text {
 
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: ($line-height / 2);
+  margin-bottom: 20px;
 
   &__name {
-    @include field-name;
+    display: block;
+    margin-bottom: 10px;
+    font-family: $font-family;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: $line-height;
   }
 
   &__input-wrap {
@@ -33,25 +22,32 @@ $border-radius:               3px !default;
     display: inline-block;
     vertical-align: middle;
     width: 100%;
-    // height: 2.125em;
-    padding: $field-padding-vertical  $field-padding-horizontal;
+    max-width: 385px;
+    height: 36px;
+    padding: 5px 15px;
     margin: 0;
-    line-height: $line-height;
     font-size: 1em;
     font-family: inherit;
-    background-color: #fff;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    line-height: inherit;
+    color: $white;
+    background-color: $bg-dark;
+    border: 1px solid $white;
+    border-radius: 0;
     appearance: textfield;
+    transition: $transition-base;
 
+    &:hover,
     &:focus {
-      @include field-focus;
+      border-color: $accent-color;
+      outline: 0;
     }
 
     &[disabled],
     &[readonly] {
       cursor: default;
-      background-color: $gray-lighter;
+      background-color: initial;
+      border-color: initial;
+      opacity: 0.5;
     }
 
     &[type='search']::-webkit-search-cancel-button,
@@ -70,12 +66,12 @@ $border-radius:               3px !default;
     }
 
     &::placeholder {
-      color: $text-color--muted;
+      color: $text-muted;
       opacity: 1;
     }
 
     @at-root textarea#{&} {
-      $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);
+      $textarea-height: ($line-height * 2) + (1em * 2);
 
       height: auto;
       min-height: calc(#{$textarea-height} + 2px);
@@ -84,6 +80,17 @@ $border-radius:               3px !default;
   }
 
   &__help-text {
-    @include field-help-text;
+    $text-color--muted:   $accent-color !default;
+    $font-size--small:    0.75em !default;
+
+    display: block;
+    padding-top: 0.4em;
+    font-size: $font-size--small;
+    line-height: 1.2em;
+    color: $accent-color;
+
+    &:empty {
+      display: none;
+    }
   }
 }

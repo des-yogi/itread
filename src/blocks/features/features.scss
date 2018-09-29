@@ -150,6 +150,20 @@
     @media (min-width: $screen-xl) {
       padding-right: 0;
     }
+
+    &--left {
+      @media (min-width: $screen-md) {
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        background: none;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-left: 0;
+      }
+    }
   }
 
   &__slide-img {
@@ -166,6 +180,11 @@
 
     @media (min-width: $screen-xl) {
       max-width: 590px;
+    }
+
+    &--left {
+      margin-left: 0;
+      margin-right: auto;
     }
   }
 
@@ -199,6 +218,18 @@
 
     @media (min-width: $screen-xl) {
       padding-left: 120px;
+    }
+
+    &--left {
+      @media (min-width: $screen-md) {
+        padding-left: 10px;
+        padding-right: 20px;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-left: 10px;
+        padding-right: 120px;
+      }
     }
   }
 
