@@ -1,9 +1,73 @@
-// В этом файле должны быть стили для БЭМ-блока alert, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .alert {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__dialog {
+    height: auto;
+  }
+
+  &__content {
+
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: $white;
+    background-color: $alert-color;
+
+    &--success {
+      background-color: green;
+    }
+  }
+
+  &__title {
+    position: relative;
+    min-height: 30px;
+    margin: 0;
+    font-family: $font-family;
+    font-weight: 400;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 2px;
+      display: block;
+      width: 25px;
+      height: 25px;
+    }
+
+    &::before {
+      left: -45px;
+      content: "";
+      border: 2px solid $white;
+    }
+
+    &::after {
+      left: -35px;
+      content: "!";
+    }
+  }
+
+  &__close {
+    top: 13px;
+    right: 10px;
+
+    span {
+
+      &::before,
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__body {
+    padding: 20px;
+  }
 }
