@@ -1,7 +1,3 @@
-// В этом файле должны быть стили для БЭМ-блока modal, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 $font-family:                 -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 $font-family--headings:       $font-family !default;
 
@@ -45,8 +41,8 @@ $z-index-modal:               100 !default;
     width: 100%;
     height: 100%;
 
-    @media (min-width: $screen-lg) {
-      width: 600px;
+    @media (min-width: $screen-md) {
+      width: 500px;
       height: auto;
 
       #{$block-name}--open & {
@@ -73,9 +69,9 @@ $z-index-modal:               100 !default;
   &__title {
     margin-top: ($line-height / 2);
     margin-bottom: ($line-height / 2);
-    font-size: $font-size--h4;
+    // font-size: $font-size--h4;
     line-height: 1.4;
-    font-weight: 700;
+    // font-weight: 700;
     color: currentColor;
   }
 
@@ -104,22 +100,20 @@ $z-index-modal:               100 !default;
     z-index: ($z-index-modal - 1);
     background-color: rgba(0, 0, 0, $opacity);
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       animation: modal-backdrop-show $transition-time 1;
     }
   }
 
   &--open {
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
 }
-
-
 
 @keyframes modal-backdrop-show {
 

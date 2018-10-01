@@ -72,6 +72,12 @@
   &--dark {
     color: $white;
     background-color: $bg-dark;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $accent-color;
+    }
   }
 
   &--send {

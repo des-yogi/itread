@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <title>ITREAD | Главная</title>
-  <meta name="description" content="">
   @@include('_include/page_head.html')
 </head>
 
@@ -24,7 +23,7 @@
             <div class="row">
               <div class="intro__col">
                 <div class="embed-responsive  embed-responsive--16-9  intro__video">
-                  <iframe src="https://www.youtube.com/embed/HNpLuXOg7xQ" frameborder="0" allowfullscreen></iframe>
+                  <iframe src="https://www.youtube.com/embed/HNpLuXOg7xQ?autoplay=1;controls=1;autohide=1;rel=0;loop=1;iv_load_policy=3" title="Дорожки для ходьбы «Walkmill»" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="intro__text">
                   <p class="intro__para">Дорожки для ходьбы (Walkmill) совсем недавно появились на рынке. Их производство продиктовано условиями жизни современного человека, которому приходится большую часть дня проводить в закрытом помещении.</p>
@@ -448,7 +447,7 @@
               </div>
               <div class="row">
                 <div class="shop__img-col">
-                  <h4 class="shop__item-title">Polar iTread <span>Silver</span></h4>
+                  <h4 class="shop__item-title  shop__item-title--silver">Polar iTread <span class="shop__item-model">Silver</span></h4>
                   <div class="shop__img-wrapper">
                     <picture>
                       <source srcset="img/polar-itread-silver-desktop@1x.jpg" media="(min-width: 1280px)">
@@ -461,7 +460,7 @@
                   </div>
                 </div>
                 <div class="shop__img-col  shop__img-col--two">
-                  <h4 class="shop__item-title">Polar iTread <span>Rose Pink</span></h4>
+                  <h4 class="shop__item-title  shop__item-title--pink">Polar iTread <span class="shop__item-model">Rose Pink</span></h4>
                   <div class="shop__img-wrapper">
                     <picture>
                       <source srcset="img/polar-itread-pink-desktop@1x.jpg" media="(min-width: 1280px)">
@@ -480,7 +479,7 @@
                 </div>
                 <div class="shop__price-col">
                   <div class="shop__price-show">
-                    <span id="item-price">26000</span> грн.</div>
+                    <span id="item-price">0</span> грн.</div>
                 </div>
                 <div class="shop__color-col">
                   <div class="shop__color shop__color--pink"></div>
@@ -497,6 +496,7 @@
               <div class="row">
                 <div class="shop__form-col-main">
                   <form id="order-form" class="shop__form" action="" method="post">
+                    <input id="model" type="hidden" name="model" value="">
                     <div class="row">
                       <div class="shop__form-col-1">
 
@@ -551,7 +551,7 @@
                         <label class="field-select">
                           <div class="field-select__name">Способ доставки</div>
                           <div class="field-select__select-wrap">
-                            <select class="field-select__select" name="delivery-method" disabled>
+                            <select class="field-select__select" name="delivery-method">
                               <optgroup label="Доступные способы доставки:">
                                 <option value="pickup" selected>Самовывоз из магазина</option>
                                 <option value="post-office">Почтой</option>
@@ -574,25 +574,25 @@
                       <div class="shop__form-col-2">
                         <h4>Polar iTread <span>Silver</span></h4>
                         <div class="shop__order-img-wrapper">
-                          <img src="img/polar-itread-silver-order.jpg" alt="Тренажер Polar ITread" width="285" height="124">
+                          <img id="img-item" src="img/polar-itread-silver-order.jpg" alt="Тренажер Polar ITread" width="285" height="124">
                         </div>
                         <div class="shop__order-check-wrapper">
                           <div class="shop__order-price-wrapper">
                             <span class="shop__order-price-label">Цена:</span>
                             <span class="h3  shop__order-price">
-                              <span class="shop__order-price-num">25000</span> грн.
+                              <span id="total-sum-field" class="shop__order-price-num">0</span> грн.
                             </span>
                           </div>
                           <div class="shop__order-quantity-wrapper">
                             <span class="shop__order-price-label">Кол-во:</span>
-                            <div class="shop__order-ctrl-wrapper">
-                              <button class="btn  btn--control  shop__order-ctrl-btn" type="button" name="minus" value="-">
+                            <div id="controls" class="shop__order-ctrl-wrapper">
+                              <button id="minusBtn" class="btn  btn--control  shop__order-ctrl-btn" type="button" name="minus">
                                 <svg width="7" height="14">
                                   <use xlink:href="img/sprite-svg.svg#arrow-right-icon"></use>
                                 </svg>
                               </button>
-                              <input class="field-text__input  shop__order-ctrl-quantity" type="numbersdfsdfsdf" name="order-quantity" value="1">
-                              <button class="btn  btn--control  shop__order-ctrl-btn" type="button" name="plus" value="+">
+                              <input id="quantity" class="field-text__input  shop__order-ctrl-quantity" type="number" name="order-quantity" value="1">
+                              <button id="plusBtn" class="btn  btn--control  shop__order-ctrl-btn" type="button" name="plus">
                                 <svg width="7" height="14">
                                   <use xlink:href="img/sprite-svg.svg#arrow-right-icon"></use>
                                 </svg>
@@ -628,6 +628,20 @@
       @@include('blocks/page-footer/page-footer.html')
     </div>
 
+  </div>
+
+  <div id="modal-message" class="modal  alert" tabindex="-1" role="dialog">
+    <div class="modal__dialog  alert__dialog" role="document">
+      <div class="modal__content  alert__content">
+        <div class="modal__header  alert__header">
+          <h4 class="modal__title  alert__title">Ошибка!</h4>
+          <a href="#" class="close  modal__close  alert__close" data-dismiss="modal" aria-label="Закрыть"><span></span></a>
+        </div>
+        <div class="modal__body  alert__body">
+          <p>Подробности... код ошибки</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   @@include('_include/page_bottom.html')

@@ -1,0 +1,39 @@
+.delivery {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 100px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__col {
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 10);
+  }
+
+  &__list {
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    min-width: 200px;
+
+    @media (min-width: $screen-xl) {
+      min-width: 275px;
+    }
+  }
+}
