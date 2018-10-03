@@ -175,8 +175,45 @@ $( document ).ready(function() {
 
 $(document).ready(function() {
   // code вывод сообщений
-  // $('#modal-message').modal('show');
+  // $('#error-message').modal('show');
   /*setTimeout(function() {
     $('#modal-message').modal('hide');
   }, 3000);*/
+});
+
+$( document ).ready(function() {
+  $("#send-btn").on('click', function () {
+    $.ajax({
+      url: 'submit.php',
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+        firstName: $('input[name=name]').val(),
+        lastName: $('input[name=surname]').val(),
+        tel: $('input[name=tel]').val(),
+        email: $('input[name=email]').val(),
+        payment: $('select[name=payment-method] option:selected').val(),
+        delivery: $('select[name=delivery-method] option:selected').val(),
+        quantity: $('input[name=quantity]').val(),
+        agreement: $('#agreement').is(":checked"),
+        itemName: $('#prodName').text(),
+        price: $('#total-sum-field').text()
+      }
+    }).done(function (data) {
+      if ( !data['success'] )
+      {
+        //alert('Ошибка: ' + data['error']);
+        $('#error-message').show();
+        $('#error-data').text('' + data['error']);
+
+      } else {
+        // alert('Заказ успешно отправлен!');
+        //$('#order-modal-form').hide();
+        $('#success-message').show();
+        setTimeout(function() {
+          $('#success-message').modal('hide');
+        }, 3000);
+      }
+    });
+  });
 });

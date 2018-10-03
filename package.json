@@ -66,12 +66,13 @@
     "yaspeller": "^5.0.0"
   },
   "dependencies": {
-    "picturefill": "^3.0.2",
     "ismobilejs": "^0.4.1",
     "jquery": "^3.3.1",
     "jquery-migrate": "^3.0.1",
     "normalize.css": "^8.0.0",
+    "npm": "^6.4.1",
     "object-fit-images": "^3.2.4",
+    "picturefill": "^3.0.2",
     "svg4everybody": "^2.1.9",
     "swiper": "^4.4.1"
   }
