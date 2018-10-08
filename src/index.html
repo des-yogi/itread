@@ -23,7 +23,7 @@
             <div class="row">
               <div class="intro__col">
                 <div class="embed-responsive  embed-responsive--16-9  intro__video">
-                  <iframe src="https://www.youtube.com/embed/HNpLuXOg7xQ?autoplay=1;controls=1;autohide=1;rel=0;loop=1;iv_load_policy=3" title="Дорожки для ходьбы «Walkmill»" allowfullscreen></iframe>
+                  <iframe src="https://www.youtube.com/embed/tKZ5gzv1Pjk?autoplay=1;controls=0;showinfo=0;rel=0;loop=1;playlist=tKZ5gzv1Pjk;iv_load_policy=3;mute=1" title="Дорожки для ходьбы «Walkmill»" allowfullscreen></iframe>
                 </div>
                 <div class="intro__text">
                   <p class="intro__para">Дорожки для ходьбы (Walkmill) совсем недавно появились на рынке. Их производство продиктовано условиями жизни современного человека, которому приходится большую часть дня проводить в закрытом помещении.</p>
@@ -456,7 +456,7 @@
                     </picture>
                   </div>
                   <div class="shop__ctrl  shop__ctrl--silver">
-                    <button id="silver-item" class="btn  shop__order-btn" type="button" value="silver"></button>
+                    <button id="silver-item" class="btn  shop__order-btn" type="button" value="silver" title="Купить Polar iTread Silver"></button>
                   </div>
                 </div>
                 <div class="shop__img-col  shop__img-col--two">
@@ -469,7 +469,7 @@
                     </picture>
                   </div>
                   <div class="shop__ctrl  shop__ctrl--pink">
-                    <button id="pink-item" class="btn  shop__order-btn" type="button" value="pink"></button>
+                    <button id="pink-item" class="btn  shop__order-btn" type="button" value="pink" title="Купить Polar iTread Rose Pink"></button>
                   </div>
                 </div>
               </div>
@@ -503,7 +503,7 @@
                         <label class="field-text">
                           <span class="field-text__name">Имя</span>
                           <span class="field-text__input-wrap">
-                            <input class="field-text__input" type="text" name="name" value="" placeholder="Обязательно для заполнения">
+                            <input class="field-text__input" type="text" name="name" value="" placeholder="Обязательно для заполнения" required>
                             <span class="field-text__help-text"></span>
                           </span>
                         </label>
@@ -511,7 +511,7 @@
                         <label class="field-text">
                           <span class="field-text__name">Фамилия</span>
                           <span class="field-text__input-wrap">
-                            <input class="field-text__input" type="text" name="surname" value="" placeholder="Обязательно для заполнения">
+                            <input class="field-text__input" type="text" name="surname" value="" placeholder="Обязательно для заполнения" required>
                             <span class="field-text__help-text"></span>
                           </span>
                         </label>
@@ -519,30 +519,37 @@
                         <label class="field-text">
                           <span class="field-text__name">Номер телефона</span>
                           <span class="field-text__input-wrap">
-                            <input class="field-text__input" type="tel" name="tel" value="" placeholder="Обязательно для заполнения">
+                            <input class="field-text__input" type="tel" name="tel" value="" placeholder="Обязательно для заполнения" required>
+                            <span class="field-text__help-text"></span>
+                          </span>
+                        </label>
+                        <label class="field-text">
+                          <span class="field-text__name">Email</span>
+                          <span class="field-text__input-wrap">
+                            <input class="field-text__input" type="email" name="email" value="" placeholder="Обязательно для заполнения" required>
                             <span class="field-text__help-text"></span>
                           </span>
                         </label>
                       </div>
                       <div class="shop__form-col-2  shop__equipment">
 
-                        <label class="field-text">
+                        <!-- <label class="field-text">
                           <span class="field-text__name">Email</span>
                           <span class="field-text__input-wrap">
-                            <input class="field-text__input" type="email" name="email" value="" placeholder="Обязательно для заполнения">
+                            <input class="field-text__input" type="email" name="email" value="" placeholder="Обязательно для заполнения" required>
                             <span class="field-text__help-text"></span>
                           </span>
-                        </label>
+                        </label> -->
 
                         <label class="field-select">
                           <span class="field-select__name">Способ оплаты</span>
                           <span class="field-select__select-wrap">
-                            <select class="field-select__select" name="payment-method">
-                              <optgroup label="Доступные способы оплаты:">
-                                <option value="cash" selected>Наличными в магазине</option>
-                                <option value="cashless">Безналичный</option>
-                                <option value="other">Еще как-то...</option>
-                              </optgroup>
+                            <select id="payment" class="field-select__select" name="payment" required>
+                              <option disabled label="Доступные способы оплаты:" value=""></option>
+                              <!-- <optgroup label="Доступные способы оплаты:"> -->
+                              <option value="cash" selected>Наличными в магазине</option>
+                              <option value="cashless">Безналичный</option>
+                              <!-- </optgroup> -->
                             </select>
                             <small class="field-select__help-text"></small>
                           </span>
@@ -551,16 +558,28 @@
                         <label class="field-select">
                           <span class="field-select__name">Способ доставки</span>
                           <span class="field-select__select-wrap">
-                            <select class="field-select__select" name="delivery-method">
-                              <optgroup label="Доступные способы доставки:">
+                            <select id="delivery" class="field-select__select" name="delivery" required>
+                              <option disabled label="Доступные способы доставки:" value=""></option>
+                              <!-- <optgroup label="Доступные способы доставки:"> -->
                                 <option value="pickup" selected>Самовывоз из магазина</option>
-                                <option value="post-office">Почтой</option>
-                                <option value="otherMethod">Коптером</option>
-                              </optgroup>
+                                <option value="new_post">Новая почта</option>
+                                <option value="courier">Курьер по Киеву</option>
+                              <!-- </optgroup> -->
                             </select>
                             <small class="field-select__help-text"></small>
                           </span>
                         </label>
+                        <label class="field-text">
+                          <span id="currentAddress" class="field-text__name">Адрес магазина</span>
+                          <span class="field-text__input-wrap">
+                            <input id="address" class="field-text__input" type="text" name="address" value="г. Киев, ул. Борисоглебская, 17/1" placeholder="Адрес" disabled>
+                            <span class="field-text__help-text"></span>
+                          </span>
+                        </label>
+                        <!-- <div class="order-modal__input-wrapper">
+                          <input class="order-modal__input" type="text" name="address" value="г. Киев, ул. Борисоглебская, 17/1" placeholder="Адрес" disabled required>
+                          <span class="order-modal__error  order-modal__error--adress"></span>
+                        </div> -->
                       </div>
                       <div class="shop__form-col-1  shop__equipment">
                         <h4>Комплектация:</h4>
@@ -591,7 +610,7 @@
                                   <use xlink:href="img/sprite-svg.svg#arrow-right-icon"></use>
                                 </svg>
                               </button>
-                              <input id="quantity" class="field-text__input  shop__order-ctrl-quantity" type="number" name="quantity" value="1">
+                              <input id="quantity" class="field-text__input  shop__order-ctrl-quantity" type="text" name="quantity" value="1">
                               <button id="plusBtn" class="btn  btn--control  shop__order-ctrl-btn" type="button" name="plus">
                                 <svg width="7" height="14">
                                   <use xlink:href="img/sprite-svg.svg#arrow-right-icon"></use>
@@ -638,7 +657,7 @@
           <a href="#" class="close  modal__close  alert__close" data-dismiss="modal" aria-label="Закрыть"><span></span></a>
         </div>
         <div class="modal__body  alert__body">
-          <p>В форме имеются ошибки! <span id="error-data"></span></p>
+          <p>В форме имеются ошибки! <br> <span id="error-data" style="font-weight:400;color:#ca1301;"></span></p>
         </div>
       </div>
     </div>
@@ -652,7 +671,7 @@
           <a href="#" class="close  modal__close  alert__close" data-dismiss="modal" aria-label="Закрыть"><span></span></a>
         </div>
         <div class="modal__body  alert__body">
-          <p>Ваше сообщение успешно отправлено!</p>
+          <p>Ваш заказ успешно отправлен!</p>
         </div>
       </div>
     </div>

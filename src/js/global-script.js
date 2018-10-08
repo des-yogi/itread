@@ -174,11 +174,25 @@ $( document ).ready(function() {
 }());
 
 $(document).ready(function() {
-  // code вывод сообщений
-  // $('#error-message').modal('show');
-  /*setTimeout(function() {
-    $('#modal-message').modal('hide');
-  }, 3000);*/
+  $('#delivery').change(function() {
+    var addr = $('#address').val();
+    var addrCurrent = $('#currentAddress');
+    if ($('#delivery').val() === 'pickup') {
+      $('#address').val('г. Киев, ул. Борисоглебская, 17/1').prop( "disabled", true );
+      addrCurrent.text('Адрес магазина');
+    }
+
+    if ($('#delivery').val() === 'new_post') {
+      $('#address').val('').prop( "disabled", false ).attr('placeholder', 'Номер отделения');
+      addrCurrent.text('Отделение Новой Почты');
+
+    }
+
+    if ($('#delivery').val() === 'courier') {
+      $('#address').val('').prop( "disabled", false ).attr('placeholder', 'Адрес');
+      addrCurrent.text('Ваш адрес');
+    }
+  });
 });
 
 $( document ).ready(function() {
@@ -192,24 +206,28 @@ $( document ).ready(function() {
         lastName: $('input[name=surname]').val(),
         tel: $('input[name=tel]').val(),
         email: $('input[name=email]').val(),
-        payment: $('select[name=payment-method] option:selected').val(),
-        delivery: $('select[name=delivery-method] option:selected').val(),
+        payment: $('select[name=payment] option:selected').val(),
+        delivery: $('select[name=delivery] option:selected').val(),
         quantity: $('input[name=quantity]').val(),
         agreement: $('#agreement').is(":checked"),
         itemName: $('#prodName').text(),
-        price: $('#total-sum-field').text()
+        price: $('#total-sum-field').text(),
+        address: $('#address').val()
       }
     }).done(function (data) {
       if ( !data['success'] )
       {
         //alert('Ошибка: ' + data['error']);
-        $('#error-message').show();
+        $('#error-message').modal('show');
         $('#error-data').text('' + data['error']);
+        setTimeout(function() {
+          $('#error-message').modal('hide');
+        }, 5000);
 
       } else {
         // alert('Заказ успешно отправлен!');
         //$('#order-modal-form').hide();
-        $('#success-message').show();
+        $('#success-message').modal('show');
         setTimeout(function() {
           $('#success-message').modal('hide');
         }, 3000);
