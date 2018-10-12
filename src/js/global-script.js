@@ -10,7 +10,7 @@
 
 (function(){
 
-      var swiper1 = new Swiper('.features__slider', {
+      var swiper1 = new Swiper('.features__slider--first', {
       centeredSlides: true,
       grabCursor: true,
       slidesPerView: 1,
@@ -21,6 +21,34 @@
         renderBullet: function (index, className) {
           return '<span class="' + className + '">' + '<span class="features__bullet-num">' + (index + 1) + '</span>' + '</span>';
         },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        // when window width is <= 640px
+        1280: {
+          spaceBetween: 40
+        }
+      },
+    });
+
+    var swiper2 = new Swiper('.features__slider--second', {
+      centeredSlides: true,
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination--second',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + '<span class="features__bullet-num">' + (index + 1) + '</span>' + '</span>';
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next--second',
+        prevEl: '.swiper-button-prev--second',
       },
       breakpoints: {
         // when window width is <= 640px
@@ -37,14 +65,14 @@
   var PRODUCTS =
   [
     {
-      name: 'Polar iTread',
+      name: 'iTread',
       model: 'Silver',
       postfix: 'silver',
       img: 'polar-itread-silver-order.jpg',
       price: 27440
     },
     {
-      name: 'Polar iTread',
+      name: 'iTread',
       model: 'Rose Pink',
       postfix: 'pink',
       img: 'polar-itread-pink-order.jpg',
@@ -98,17 +126,15 @@ $( document ).ready(function() {
   var btnSilver = document.getElementById('silver-item');
   var btnPink = document.getElementById('pink-item');
   var selectedImg = document.getElementById('img-item');
-  var selectedModel = document.getElementById('model');
-
-  //function init ('domCo') {}
+  var selectedModel = document.getElementById('selectedModel');
 
   var btnBuyClickHandler = function(e) {
     if (this.id === 'silver-item') {
       selectedImg.src = 'img/polar-itread-silver-order.jpg'
-      selectedModel.value = 'Silver';
+      selectedModel.innerText = 'Silver';
     } else {
         selectedImg.src = 'img/polar-itread-pink-order.jpg'
-        selectedModel.value = 'Rose Pink';
+        selectedModel.innerText = 'Rose Pink';
     }
   };
 
