@@ -10,7 +10,7 @@
 
 (function(){
 
-      var swiper1 = new Swiper('.features__slider', {
+      var swiper1 = new Swiper('.features__slider--first', {
       centeredSlides: true,
       grabCursor: true,
       slidesPerView: 1,
@@ -21,6 +21,34 @@
         renderBullet: function (index, className) {
           return '<span class="' + className + '">' + '<span class="features__bullet-num">' + (index + 1) + '</span>' + '</span>';
         },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        // when window width is <= 640px
+        1280: {
+          spaceBetween: 40
+        }
+      },
+    });
+
+    var swiper2 = new Swiper('.features__slider--second', {
+      centeredSlides: true,
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination--second',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + '<span class="features__bullet-num">' + (index + 1) + '</span>' + '</span>';
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next--second',
+        prevEl: '.swiper-button-prev--second',
       },
       breakpoints: {
         // when window width is <= 640px
@@ -37,14 +65,14 @@
   var PRODUCTS =
   [
     {
-      name: 'Polar iTread',
+      name: 'iTread',
       model: 'Silver',
       postfix: 'silver',
       img: 'polar-itread-silver-order.jpg',
       price: 27440
     },
     {
-      name: 'Polar iTread',
+      name: 'iTread',
       model: 'Rose Pink',
       postfix: 'pink',
       img: 'polar-itread-pink-order.jpg',
@@ -98,17 +126,15 @@ $( document ).ready(function() {
   var btnSilver = document.getElementById('silver-item');
   var btnPink = document.getElementById('pink-item');
   var selectedImg = document.getElementById('img-item');
-  var selectedModel = document.getElementById('model');
-
-  //function init ('domCo') {}
+  var selectedModel = document.getElementById('selectedModel');
 
   var btnBuyClickHandler = function(e) {
     if (this.id === 'silver-item') {
       selectedImg.src = 'img/polar-itread-silver-order.jpg'
-      selectedModel.value = 'Silver';
+      selectedModel.innerText = 'Silver';
     } else {
         selectedImg.src = 'img/polar-itread-pink-order.jpg'
-        selectedModel.value = 'Rose Pink';
+        selectedModel.innerText = 'Rose Pink';
     }
   };
 
@@ -174,9 +200,64 @@ $( document ).ready(function() {
 }());
 
 $(document).ready(function() {
-  // code вывод сообщений
-  // $('#modal-message').modal('show');
-  /*setTimeout(function() {
-    $('#modal-message').modal('hide');
-  }, 3000);*/
+  $('#delivery').change(function() {
+    var addr = $('#address').val();
+    var addrCurrent = $('#currentAddress');
+    if ($('#delivery').val() === 'pickup') {
+      $('#address').val('г. Киев, ул. Борисоглебская, 17/1').prop( "disabled", true );
+      addrCurrent.text('Адрес магазина');
+    }
+
+    if ($('#delivery').val() === 'new_post') {
+      $('#address').val('').prop( "disabled", false ).attr('placeholder', 'Номер отделения');
+      addrCurrent.text('Отделение Новой Почты');
+
+    }
+
+    if ($('#delivery').val() === 'courier') {
+      $('#address').val('').prop( "disabled", false ).attr('placeholder', 'Адрес');
+      addrCurrent.text('Ваш адрес');
+    }
+  });
+});
+
+$( document ).ready(function() {
+  $("#send-btn").on('click', function () {
+    $.ajax({
+      url: 'submit.php',
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+        firstName: $('input[name=name]').val(),
+        lastName: $('input[name=surname]').val(),
+        tel: $('input[name=tel]').val(),
+        email: $('input[name=email]').val(),
+        payment: $('select[name=payment] option:selected').val(),
+        delivery: $('select[name=delivery] option:selected').val(),
+        quantity: $('input[name=quantity]').val(),
+        agreement: $('#agreement').is(":checked"),
+        itemName: $('#prodName').text(),
+        price: $('#total-sum-field').text(),
+        address: $('#address').val()
+      }
+    }).done(function (data) {
+      if ( !data['success'] )
+      {
+        //alert('Ошибка: ' + data['error']);
+        $('#error-message').modal('show');
+        $('#error-data').text('' + data['error']);
+        setTimeout(function() {
+          $('#error-message').modal('hide');
+        }, 5000);
+
+      } else {
+        // alert('Заказ успешно отправлен!');
+        //$('#order-modal-form').hide();
+        $('#success-message').modal('show');
+        setTimeout(function() {
+          $('#success-message').modal('hide');
+        }, 3000);
+      }
+    });
+  });
 });

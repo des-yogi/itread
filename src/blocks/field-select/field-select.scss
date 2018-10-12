@@ -18,25 +18,10 @@
     line-height: $line-height;
   }
 
-/*   &__select-wrap {
-  position: relative;
-
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    content: "";
-    //z-index: 1;
-    display: block !important;
-    width: 36px !important;
-    height: 36px !important;
-    // background-color: green;
-    background-image: svg-load('../blocks/field-select/img_to_bg/select-down.svg');
-    background-repeat: no-repeat;
-    background-position: right 0.3em center;
-    background-size: 1.063em 0.688em;
+  &__select-wrap {
+    display: block;
   }
-} */
+
 
   &__select {
     position: relative;

@@ -28,3 +28,9 @@
     }
   }
 }
+
+@mixin img-sharp {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  -ms-interpolation-mode: nearest-neighbor; /* IE */
+}
